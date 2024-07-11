@@ -6,13 +6,19 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <NamedLayer>
-        <Name>Wegeklasse1</Name>
+        <Name>Forstwege</Name>
         <UserStyle>
-            <Name>Wegeklasse1</Title>
+            <Name>default-style-Forstwege</Name>
             <IsDefault>1</IsDefault>
             <FeatureTypeStyle>
                 <Rule>
                     <Name>hauptwege</Name>
+				  <ogc:Filter>
+					<ogc:PropertyIsEqualTo>
+					  <ogc:PropertyName>wayclass</ogc:PropertyName>
+					  <ogc:Literal>1</ogc:Literal>
+					</ogc:PropertyIsEqualTo>
+				  </ogc:Filter>
                     <LineSymbolizer>
                         <Stroke>
                         <CssParameter name="stroke">#E60000</CssParameter>
@@ -20,26 +26,34 @@
                         </Stroke>
                     </LineSymbolizer>
                 </Rule>
-        </FeatureTypeStyle>
-        </UserStyle>
-    </NamedLayer>
-    <NamedLayer>
-        <Name>Wegeklasse2</Name>
-        <UserStyle>
-            <Name>Wegeklasse2</Title>
-            <IsDefault>1</IsDefault>
-            <FeatureTypeStyle>
-                <Rule>
+				<Rule>
                     <Name>beschraenkte_wege</Name>
-                    <LineSymbolizer>
+				  <ogc:Filter>
+					<ogc:Or>
+					<ogc:PropertyIsEqualTo>
+					  <ogc:PropertyName>wayclass</ogc:PropertyName>
+					  <ogc:Literal>2</ogc:Literal>
+					</ogc:PropertyIsEqualTo>
+					<ogc:PropertyIsEqualTo>
+					  <ogc:PropertyName>wayclass</ogc:PropertyName>
+					  <ogc:Literal>3</ogc:Literal>
+					</ogc:PropertyIsEqualTo>
+					<ogc:PropertyIsEqualTo>
+					  <ogc:PropertyName>wayclass</ogc:PropertyName>
+					  <ogc:Literal>9</ogc:Literal>
+					</ogc:PropertyIsEqualTo>
+                    </ogc:Or>
+				  </ogc:Filter>
+					<LineSymbolizer>
                         <Stroke>
                         <CssParameter name="stroke">#E60000</CssParameter>
-                        <CssParameter name="stroke-width">3</CssParameter>
-                        <CssParameter name="stroke-dasharray">5 2</CssParameter>
+                        <CssParameter name="stroke-width">2</CssParameter>
+                        <CssParameter name="stroke-dasharray">2 7</CssParameter>
                         </Stroke>
                     </LineSymbolizer>
                 </Rule>
-            </FeatureTypeStyle>
+			</FeatureTypeStyle>
         </UserStyle>
     </NamedLayer>
 </StyledLayerDescriptor>
+
