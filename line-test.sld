@@ -8,6 +8,7 @@
   <NamedLayer>
     <Name>waldwege</Name>
     <UserStyle>
+      <Name>waldwege</Title>
       <Title>waldwege style</Title>
       <FeatureTypeStyle>
         <Rule>
